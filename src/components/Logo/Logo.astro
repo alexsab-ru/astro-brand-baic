@@ -1,5 +1,6 @@
 ---
-import { SITE_NAME } from '@/const';
+import settings from '@/data/settings.json';
+const { site_name } = settings;
 const path = Astro.url.pathname;
 ---
 {path === '/' ? (
