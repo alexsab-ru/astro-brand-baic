@@ -12,5 +12,4 @@ const currentPath = Astro.url.pathname;
 const seoTitle = seo[currentPath] ? seo[currentPath].h1 : title;
 
 ---
-
-<h1 class={classes}>{seoTitle}</h1>
+{seoTitle.length ? (<h1 class={classes}>{seoTitle}</h1>) : null}
