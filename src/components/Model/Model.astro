@@ -25,6 +25,7 @@ const photoSlides = !model.photos
 import Button from '@/components/Button/Button.astro';
 import ColorLink from '@/components/ColorLink/ColorLink.astro'
 const carImagePath = model.colors[0].carImage || `/img/${model.id}/${model.colors[0].id}.png`;
+import './model.css';
 const labelBtn = status === 'preorder' || status === 'comminsoon' ? 'Предзаказ' : 'Узнать цену';
 ---
 
@@ -177,28 +178,28 @@ const labelBtn = status === 'preorder' || status === 'comminsoon' ? 'Предз�
 		{(status === 'enable' || status === 'show' || model?.show) && (
 			<div class="flex justify-center flex-wrap xs:flex-col gap-4 mt-14">
 				<Button
-					classes="popup-link btn black btn-o !px-4 flex-1 whitespace-nowrap"
+					classes="popup-link btn black btn-o px-4! flex-1 whitespace-nowrap"
 					url="#common-modal"
 					title="Купить"
 					dataTitle={`Купить ${model.mark_id}`}
 					dataFormName={`Купить. ${model.mark_id} ${model.name}`}
 				/>
 				<Button
-					classes="popup-link btn !px-4 flex-1 whitespace-nowrap"
+					classes="popup-link btn px-4! flex-1 whitespace-nowrap"
 					url="#common-modal"
 					title="Рассчитать кредит"
 					dataTitle="Рассчитать кредит"
 					dataFormName={`Рассчитать кредит. ${model.mark_id} ${model.name}`}
 				/>
 				<Button
-					classes="popup-link btn gray !px-4 flex-1 whitespace-nowrap"
+					classes="popup-link btn gray px-4! flex-1 whitespace-nowrap"
 					url="#common-modal"
 					title="Записаться на тест-драйв"
 					dataTitle="Записаться на тест-драйв"
 					dataFormName={`Записаться на тест-драйв. ${model.mark_id} ${model.name}`}
 				/>
 				<Button
-					classes="popup-link btn black !px-4 flex-1 whitespace-nowrap"
+					classes="popup-link btn black px-4! flex-1 whitespace-nowrap"
 					url="#common-modal"
 					title="Узнать цену по акции"
 					dataTitle="Узнать цену по акции"
@@ -206,14 +207,14 @@ const labelBtn = status === 'preorder' || status === 'comminsoon' ? 'Предз�
 				/>
 				{ (model?.complectations !== undefined && model?.complectations.length) ? (
 					<Button
-						classes="btn black btn-o !px-4 flex-1 whitespace-nowrap"
+						classes="btn black btn-o px-4! flex-1 whitespace-nowrap"
 						view="scroll-link"
 						url="#complectation"
 						title="Подобрать комплектацию"
 					/>
 				) : (
 					<Button
-						classes="popup-link btn black btn-o !px-4 flex-1 whitespace-nowrap"
+						classes="popup-link btn black btn-o px-4! flex-1 whitespace-nowrap"
 						view="popup-link"
 						url="#common-modal"
 						title="Подобрать комплектацию"

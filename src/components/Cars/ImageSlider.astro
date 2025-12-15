@@ -28,7 +28,7 @@ import './image-slider.css';
 	<div class="swiper-wrapper">
 		{
 			data.images.map(img => (
-				<div class="swiper-slide select-none min-w-[200px] flex !justify-start items-center" data-thumb-lazy>
+				<div class="swiper-slide select-none min-w-[200px] flex justify-start! items-center" data-thumb-lazy>
 					<img src="https://cdn.alexsab.ru/loaders/simple-loading-gray.svg" data-src={img} class="select-none h-full w-auto" alt={data.folder_id} height="130" loading="lazy" />
 					<div class="swiper-lazy-preloader"></div>
 				</div>
@@ -40,22 +40,3 @@ import './image-slider.css';
 <script>
 	import './slider';
 </script>
-
-<style lang="scss">
-.swiper.car-thumb-slider{
-	.swiper-slide{
-		position: relative;
-		&::after{
-			content: '';
-			position: absolute;
-			inset: 0;
-			background-color: #000;
-			opacity: 0.6;
-			transition: opacity .3s;
-		}
-		&.swiper-slide-thumb-active::after{
-			opacity: 0;
-		}
-	}
-}
-</style>
